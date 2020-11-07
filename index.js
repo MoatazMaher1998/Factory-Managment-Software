@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/',routes);
 app.use('/user',routes);
-app.listen(2000, function() {
+app.listen(process.env.PORT || 2000, function() {
 
     console.log('App running on port 2000');
 
