@@ -7,8 +7,7 @@ var database = require('./Server/database');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-database();
-//database.connectToDatabase();
+database.connectToDatabase();
 app.use('/',routes);
 app.use('/user',routes);
 app.listen(Port, function() {
