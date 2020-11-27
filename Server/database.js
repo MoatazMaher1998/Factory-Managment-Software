@@ -5,11 +5,11 @@ function connectToDatabase(){
     console.log("Connecting to Database ...");
     
  connection = mysql2.createPool({
-    host: 'sql7.freemysqlhosting.net',
-    port : '3306',
-    user: 'sql7377142',
-    database: 'sql7377142',
-    password:'VEWpxxIlVs'
+    host: 'factorycluster.cscjitdezpyp.us-east-2.rds.amazonaws.com',
+    port:'3306',
+    user:'admin',
+    password:'moatazmaher',
+    database : 'Factory'
 });
 connection.promise()
 .execute("SELECT * FROM `Managers`")

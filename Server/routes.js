@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var database = require('./database');
+router.post('/admin', function(req,res){
+res.send("Hello");
+});
 router.post('/main', function (req, res) {
     console.log('\x1b[36m%s\x1b[0m','POST request on "/main" received on server');
     
@@ -9,7 +12,9 @@ router.post('/main', function (req, res) {
         if( response == "Admin"){
             res.sendFile(require('path').parse(__dirname).dir + '/Views/Main.html');}
             else{
-                res.send(response);
+                res.json({response : response});
+            //    res.redirect('/')
+                
             }
     });
 
