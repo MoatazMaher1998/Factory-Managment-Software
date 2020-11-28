@@ -123,7 +123,7 @@ span.psw {
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="Images/User.jpg" alt="Avatar" class="avatar">
     </div>
-
+   
     <div class="container">
       <label for="uname"><b>ID</b></label>
       <input type="text" placeholder="Enter Username" name="ID" required>
@@ -136,6 +136,9 @@ span.psw {
 
   </form>
 </div>
+<% if (condition!='new') { %>
+  <h5><%=condition%></h5>
+<% } %>
 
 <script>
 // Get the modal

@@ -14,7 +14,7 @@ function connectToDatabase(){
 connection.promise()
 .execute("SELECT * FROM `Managers`")
 .then(([rows]) => {
-    console.log('Connected to Mysql Database! Weza fager a gd3an');
+    console.log('Connected to Database!');
 }).catch(err => {
     console.log(err);
 });}
@@ -28,8 +28,7 @@ function checkUser(Data,Callback){
     }
     else {
         if(rows[0].Password == Data.Password){
-            if(rows[0].Type == 1){Response = "Admin";}
-            else{Response = "Manager";}
+            Response = rows[0].Type;
         }
         else 
         Response = "Wrong Password";
