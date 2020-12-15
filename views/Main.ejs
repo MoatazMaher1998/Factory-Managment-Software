@@ -36,9 +36,21 @@
                     <button class="navitem">Sewing</button>
                     <button class="navitem">Packaging</button>
             </div>
-            <form action="/admin" method="POST" >
-            <button type="submit">Admin Panel</button>
-           </form>
+            <h5><%=user.ID%></h5>
+            <% if (user.Type=='admin') { %>
+                <form action="/admin" method="POST" >
+                <input  name="ID" type="hidden" value= <%=user.ID%>>
+                <input  name="Password" type="hidden" value= <%=user.Password%>>
+                <button type="submit">Admin Panel</button>
+                
+                </form>
+              <% } %>
+            <% if(user.Type!='admin') { %>
+                <form action="/user" method="POST" >
+                    <button type="submit">Change Password</button>
+                    </form>
+            <% } %>
+           
     </body>
 
 </html>

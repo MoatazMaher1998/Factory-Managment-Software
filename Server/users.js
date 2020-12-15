@@ -1,3 +1,5 @@
+const e = require("express");
+
 var currentUser;
 function knowUser(user){
 currentUser = user;
@@ -5,4 +7,10 @@ currentUser = user;
 function getUser(){
     return currentUser;
 }
-module.exports={getUser,knowUser};
+function validateUser(req){
+if(req.ID == currentUser.ID && req.Password == currentUser.Password){
+    return true;
+}
+else return false;
+}
+module.exports={getUser,knowUser,validateUser};

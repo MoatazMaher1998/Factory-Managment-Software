@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const mysql2 = require('mysql2');
+var user = require('./users');
 var connection;
 function connectToDatabase(){
     console.log("Connecting to Database ...");
@@ -19,8 +20,8 @@ connection.promise()
     console.log(err);
 });}
 function checkUser(Data,Callback){
-    var Response='weza';
-    connection.promise().execute("SELECT Password,Type FROM Managers WHERE ID = '"+ Data.ID +"'")
+    var Response;
+    connection.promise().execute("SELECT ID,Password,Type FROM Managers WHERE ID = '"+ Data.ID +"'")
     .then(([rows]) => {
         
     if(rows.length == 0){
@@ -28,7 +29,9 @@ function checkUser(Data,Callback){
     }
     else {
         if(rows[0].Password == Data.Password){
-            Response = rows[0].Type;
+            user.knowUser(rows[0]);
+            Response = "Pass";
+
         }
         else 
         Response = "Wrong Password";
@@ -43,5 +46,11 @@ function checkUser(Data,Callback){
 });
 
  }
-
-module.exports = {connectToDatabase,checkUser};
+function getAllManagers(){
+    connection.promise().execute("SELECT * FROM Managers")
+    .then(([rows]) => {
+        console.log(rows + "rows");
+        return rows;
+    });
+}
+module.exports = {connectToDatabase,checkUser,getAllManagers};
