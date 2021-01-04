@@ -107,7 +107,7 @@ function myFunction1() {
                     <button onclick="myFunction4()" class="navitem">Accounting</button>
             </div>
 
-            <h5><%=user.ID%></h5>
+            
             <% if (user.Type=='admin') { %>
                 <form action="/admin" method="POST" >
                 <input  name="ID" type="hidden" value= <%=user.ID%>>
