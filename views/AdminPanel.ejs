@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link href="/CSS/FE2.css" type="text/css" rel="stylesheet">
 </head>
 
 
@@ -44,6 +47,22 @@
     
     button:hover {
       opacity:1;
+    }
+    
+    
+    .Allbutton:hover {
+      opacity:1;
+    }
+
+    .Allbuttons {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      float: right;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
     }
     
     /* Extra styles for the cancel button */
@@ -122,11 +141,15 @@
     }
     </style>
 
-
+<script>
+function DeleteAlert() {
+  alert("Are you sure? ");
+}
+</script>
 
 <body>
   
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+<button class= "Allbuttons" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     <form class="modal-content" action="/AddUser" method="POST" >
@@ -135,13 +158,13 @@
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="Name" required>
+        <input class ="Allinput type="text" placeholder="Enter Name" name="Name" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="Password" id="pswd1" required>
+        <input class ="Allinput type="password" placeholder="Enter Password" name="Password" id="pswd1" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="CPassword" id="pswd2" required>
+        <input class ="Allinput type="password" placeholder="Repeat Password" name="CPassword" id="pswd2" required>
         
         <label for="username"><b>Department</b></label><br>
         <select name="Department" placeholder="Enter Department" required>
