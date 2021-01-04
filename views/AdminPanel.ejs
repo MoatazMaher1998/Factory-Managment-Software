@@ -18,7 +18,7 @@
     * {box-sizing: border-box;}
     
     /* Full-width input fields */
-    input[type=text], input[type=password] {
+    .Allinput[type=text], .Allinput[type=password] {
       width: 100%;
       padding: 15px;
       margin: 5px 0 22px 0;
@@ -28,13 +28,13 @@
     }
     
     /* Add a background color when the inputs get focus */
-    input[type=text]:focus, input[type=password]:focus {
+    .Allinput[type=text]:focus, .Allinput[type=password]:focus {
       background-color: #ddd;
       outline: none;
     }
     
     /* Set a style for all buttons */
-    button {
+    .Allbutton {
       background-color: #4CAF50;
       color: white;
       padding: 14px 20px;
@@ -44,11 +44,6 @@
       width: 100%;
       opacity: 0.9;
     }
-    
-    button:hover {
-      opacity:1;
-    }
-    
     
     .Allbutton:hover {
       opacity:1;
@@ -63,6 +58,10 @@
       cursor: pointer;
       width: 100%;
       opacity: 0.9;
+    }
+    
+    .Allbuttons:hover {
+      opacity:1;
     }
     
     /* Extra styles for the cancel button */
@@ -174,8 +173,8 @@ function DeleteAlert() {
           
         </select>
         <div class="clearfix">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn" onclick="matchPassword()">Sign Up</button>
+          <button class="Allbutton" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button class="Allbutton" type="submit" class="signupbtn" onclick="matchPassword()">Sign Up</button>
       
         </div>
       </div>
@@ -227,6 +226,13 @@ function matchPassword() {
     </head>
     
     <body>
+       <div class="remove">
+      <form >
+        <label for="UserId">User ID:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <input class="b1" onclick="DeleteAlert()" type="submit" value="Delete User">
+      </form> 
+    </div>
     
     <table>
     <tr>
