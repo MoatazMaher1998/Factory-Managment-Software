@@ -39,4 +39,11 @@ body{
 	border-width: 3px;
 }
 
-
+.adminbutton{
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.9;
+}
