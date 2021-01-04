@@ -3,7 +3,14 @@
 
 <head>
 
+    <link href="FE.css" type="text/css" rel="stylesheet">
+
     <style>
+
+         table, th, td {
+            border: 1px solid black;
+         }
+
         .relative {
             margin: auto;
             width: 40%;
@@ -25,17 +32,81 @@
             margin: 15px;
         }
     </style>
+
+
+
+
+<script>
+function myFunction1() {
+    var x = document.getElementById("cutting");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+      var a = document.getElementById("sewing");
+      a.style.display = "none";
+      var b = document.getElementById("packaging");
+      b.style.display = "none";    
+      var c = document.getElementById("accounting");
+      c.style.display = "none";
+  } 
+
+
+  function myFunction2() {
+    var x = document.getElementById("sewing");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    var a = document.getElementById("cutting");
+      a.style.display = "none";
+      var b = document.getElementById("packaging");
+      b.style.display = "none";    
+      var c = document.getElementById("accounting");
+      c.style.display = "none";
+  } 
+ 
+
+  function myFunction3() {
+    var x = document.getElementById("packaging");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    var a = document.getElementById("sewing");
+      a.style.display = "none";
+      var b = document.getElementById("cutting");
+      b.style.display = "none";    
+      var c = document.getElementById("accounting");
+      c.style.display = "none";
+  } 
+
+
+  function myFunction4() {
+    var x = document.getElementById("accounting");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    var a = document.getElementById("sewing");
+      a.style.display = "none";
+      var b = document.getElementById("packaging");
+      b.style.display = "none";    
+      var c = document.getElementById("cutting");
+      c.style.display = "none";
+  } 
+</script>
+
+
+
 </head>
 
 
 
     <body>
             <div class="relative">
-                    <button class="navitem">General</button>
-                    <button class="navitem">Cutting</button>
-                    <button class="navitem">Sewing</button>
-                    <button class="navitem">Packaging</button>
+                    <button onclick="myFunction1()" class="navitem">Cutting</button>
+                    <button onclick="myFunction2()" class="navitem">Sewing</button>
+                    <button onclick="myFunction3()" class="navitem">Packaging</button>
+                    <button onclick="myFunction4()" class="navitem">Accounting</button>
             </div>
+
             <h5><%=user.ID%></h5>
             <% if (user.Type=='admin') { %>
                 <form action="/admin" method="POST" >
@@ -50,7 +121,144 @@
                     <button type="submit">Change Password</button>
                     </form>
             <% } %>
+
+
+
+<div id="cutting" style="display:none;">
+<TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+    <TR>
+       <TH class="h1" COLSPAN="2"><BR><H3>Cutting</H3>
+       </TH>
+    </TR>
+    <TR>
+       <TH class="h2">Column A</TH>
+       <TH class="h2">Column B</TH>
+    </TR>
+    <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+    </TR>
+    <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+    </TR>
+    <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+    </TR>
+    <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+    </TR>
+ </TABLE>
+
+></div>
+
+
+
+<div id="sewing" style="display:none;">
+    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+        <TR>
+           <TH class="h1" COLSPAN="2"><BR><H3>Sewing</H3>
+           </TH>
+        </TR>
+        <TR>
+           <TH class="h2">Column A</TH>
+           <TH class="h2">Column B</TH>
+        </TR>
+        <TR ALIGN="CENTER">
+           <TD class="h3">Data 1</TD>
+           <TD class="h3">Data 2</TD>
+        </TR>
+        <TR ALIGN="CENTER">
+           <TD class="h3">Data 1</TD>
+           <TD class="h3">Data 2</TD>
+        </TR>
+        <TR ALIGN="CENTER">
+           <TD class="h3">Data 1</TD>
+           <TD class="h3">Data 2</TD>
+        </TR>
+        <TR ALIGN="CENTER">
+           <TD class="h3">Data 1</TD>
+           <TD class="h3">Data 2</TD>
+        </TR>
+     </TABLE>
+    
+    ></div>
+
+
+
+    <div id="packaging" style="display:none;">
+        <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+            <TR>
+               <TH class="h1" COLSPAN="2"><BR><H3>Packaging</H3>
+               </TH>
+            </TR>
+            <TR>
+               <TH class="h2">Column A</TH>
+               <TH class="h2">Column B</TH>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+            </TR>
+         </TABLE>
+        
+        ></div>
+
+
+
+        <div id="accounting" style="display:none;">
+            <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+                <TR>
+                   <TH class="h1" COLSPAN="2"><BR><H3>Accounting</H3>
+                   </TH>
+                </TR>
+                <TR>
+                   <TH class="h2">Column A</TH>
+                   <TH class="h2">Column B</TH>
+                </TR>
+                <TR ALIGN="CENTER">
+                   <TD class="h3">Data 1</TD>
+                   <TD class="h3">Data 2</TD>
+                </TR>
+                <TR ALIGN="CENTER">
+                   <TD class="h3">Data 1</TD>
+                   <TD class="h3">Data 2</TD>
+                </TR>
+                <TR ALIGN="CENTER">
+                   <TD class="h3">Data 1</TD>
+                   <TD class="h3">Data 2</TD>
+                </TR>
+                <TR ALIGN="CENTER">
+                   <TD class="h3">Data 1</TD>
+                   <TD class="h3">Data 2</TD>
+                </TR>
+             </TABLE>
+            
+            ></div>
+
+
+
            
     </body>
 
+    
 </html>
+
+
+
+
+
