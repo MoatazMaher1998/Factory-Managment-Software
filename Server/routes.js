@@ -3,11 +3,19 @@ var express = require('express');
 var router = express.Router();
 var database = require('./database');
 const { getUser,validateUser } = require('./users');
+router.post('/AddUser', function(req,res){
+    Data = req.body;
+    if(Data.Password == Data.CPassword){
+        
 
+    }
+
+
+});
 router.post('/admin', function(req,res){
 if(validateUser(req.body)== true){
     database.getAllManagers(function(response){
-        console.log(response);
+        
         res.render('AdminPanel',{managers : response});
     });
     

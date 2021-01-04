@@ -47,7 +47,7 @@ function checkUser(Data,Callback){
 
  }
 function getAllManagers(Callback){
-    connection.query("SELECT * FROM Managers",function(err, results, fields){
+    connection.query("SELECT * FROM Factory.Managers  LEFT JOIN Factory.Department ON Factory.Managers.dep_ID = Factory.Department.Dept_ID",function(err, results, fields){
         Callback(results);
     });
     

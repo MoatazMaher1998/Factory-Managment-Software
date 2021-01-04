@@ -129,26 +129,31 @@
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/register">
+    <form class="modal-content" action="/AddUser" method="POST">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="name" required>
+        <input type="text" placeholder="Enter Name" name="Name" required>
 
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-  
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="Password" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input type="password" placeholder="Repeat Password" name="CPassword" required>
         
+        <label for="username"><b>Department</b></label><br>
+        <select name="Department" placeholder="Enter Department" required>
+          <option value="1">Cutting</option>
+          <option value="2">Sewing</option>
+          <option value="3">Packaging</option>
+          
+        </select>
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
           <button type="submit" class="signupbtn">Sign Up</button>
+      
         </div>
       </div>
     </form>
@@ -194,6 +199,7 @@ modal.style.display = "none";
     <th>Id</th>
     <th>Name</th>
     <th>Department ID</th>
+    <th>Department Name</th>
     <th>Password</th>
     </tr>
     
@@ -202,6 +208,7 @@ modal.style.display = "none";
           <td><%=managers[result].ID%></td>
           <td><%=managers[result].name%></td>
           <td><%=managers[result].dep_ID%></td>
+          <td><%=managers[result].department_name%></td>
           <td><%=managers[result].password%></td>  
         </tr>
           <%}%>
