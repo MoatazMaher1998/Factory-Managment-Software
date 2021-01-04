@@ -1,3 +1,4 @@
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 var database = require('./database');
@@ -5,7 +6,12 @@ const { getUser,validateUser } = require('./users');
 
 router.post('/admin', function(req,res){
 if(validateUser(req.body)== true){
-    res.render('AdminPanel',{managers : database.getAllManagers()});}
+    database.getAllManagers(function(response){
+        console.log(response);
+        res.render('AdminPanel',{managers : response});
+    });
+    
+    }
 else 
 res.send("you have no authentication ya 3ars");
 });

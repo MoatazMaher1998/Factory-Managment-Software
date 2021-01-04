@@ -127,7 +127,6 @@
 <body>
   
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-<h5><%=managers%></h5>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     <form class="modal-content" action="/register">
@@ -189,17 +188,25 @@ modal.style.display = "none";
     </head>
     
     <body>
-      <ul>
-        <% for (var i = 0; i < managers.length ; i++) { %>
-            <li> <%= managers[i].Password %> </li>
-        <% } %>
-    </ul>
+    
     <table>
     <tr>
     <th>Id</th>
-    <th>Department</th>
-    <th>Username</th>
+    <th>Name</th>
+    <th>Department ID</th>
     <th>Password</th>
+    </tr>
+    
+        <%for (var result in managers){%>
+          <tr>
+          <td><%=managers[result].ID%></td>
+          <td><%=managers[result].name%></td>
+          <td><%=managers[result].dep_ID%></td>
+          <td><%=managers[result].password%></td>  
+        </tr>
+          <%}%>
+
+    
     </table>
     </body>
 

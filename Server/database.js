@@ -46,9 +46,9 @@ function checkUser(Data,Callback){
 });
 
  }
-function getAllManagers(){
+function getAllManagers(Callback){
     connection.query("SELECT * FROM Managers",function(err, results, fields){
-        return results;
+        Callback(results);
     });
     
 }
