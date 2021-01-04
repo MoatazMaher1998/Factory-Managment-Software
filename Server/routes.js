@@ -5,7 +5,6 @@ const { getUser,validateUser } = require('./users');
 
 router.post('/admin', function(req,res){
 if(validateUser(req.body)== true){
-    console.log(database.getAllManagers());
     res.render('AdminPanel',{managers : database.getAllManagers()});}
 else 
 res.send("you have no authentication ya 3ars");

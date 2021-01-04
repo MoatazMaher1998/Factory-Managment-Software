@@ -47,10 +47,9 @@ function checkUser(Data,Callback){
 
  }
 function getAllManagers(){
-    connection.promise().execute("SELECT * FROM Managers")
-    .then(([rows]) => {
-        console.log(rows + "rows");
-        return rows;
+    connection.query("SELECT * FROM Managers",function(err, results, fields){
+        return results;
     });
+    
 }
 module.exports = {connectToDatabase,checkUser,getAllManagers};
