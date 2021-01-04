@@ -107,7 +107,7 @@ function myFunction1() {
                     <button onclick="myFunction4()" class="navitem">Accounting</button>
             </div>
 
-           
+            <h5><%=user.ID%></h5>
             <% if (user.Type=='admin') { %>
                 <form action="/admin" method="POST" >
                 <input  name="ID" type="hidden" value= <%=user.ID%>>
@@ -127,28 +127,43 @@ function myFunction1() {
 <div id="cutting" style="display:none;">
 <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
     <TR>
-       <TH class="h1" COLSPAN="2"><BR><H3>Cutting</H3>
+       <TH class="h1" COLSPAN="5"><BR><H3>Cutting</H3>
        </TH>
     </TR>
     <TR>
-       <TH class="h2">Column A</TH>
-       <TH class="h2">Column B</TH>
+       <TH class="h2">Cutting ID</TH>
+       <TH class="h2">Manager ID</TH>
+       <TH class="h2">Cost</TH>
+       <TH class="h2">Output Quantity</TH>
+       <TH class="h2">Order ID</TH>
     </TR>
     <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
+    </TR>
+    <TR ALIGN="CENTER">
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
        <TD class="h3">Data 1</TD>
        <TD class="h3">Data 2</TD>
     </TR>
     <TR ALIGN="CENTER">
        <TD class="h3">Data 1</TD>
        <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
+       <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
     </TR>
     <TR ALIGN="CENTER">
        <TD class="h3">Data 1</TD>
        <TD class="h3">Data 2</TD>
-    </TR>
-    <TR ALIGN="CENTER">
        <TD class="h3">Data 1</TD>
        <TD class="h3">Data 2</TD>
+       <TD class="h3">Data 1</TD>
     </TR>
  </TABLE>
 
@@ -157,96 +172,146 @@ function myFunction1() {
 
 
 <div id="sewing" style="display:none;">
-    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
-        <TR>
-           <TH class="h1" COLSPAN="2"><BR><H3>Sewing</H3>
-           </TH>
-        </TR>
-        <TR>
-           <TH class="h2">Column A</TH>
-           <TH class="h2">Column B</TH>
-        </TR>
-        <TR ALIGN="CENTER">
-           <TD class="h3">Data 1</TD>
-           <TD class="h3">Data 2</TD>
-        </TR>
-        <TR ALIGN="CENTER">
-           <TD class="h3">Data 1</TD>
-           <TD class="h3">Data 2</TD>
-        </TR>
-        <TR ALIGN="CENTER">
-           <TD class="h3">Data 1</TD>
-           <TD class="h3">Data 2</TD>
-        </TR>
-        <TR ALIGN="CENTER">
-           <TD class="h3">Data 1</TD>
-           <TD class="h3">Data 2</TD>
-        </TR>
-     </TABLE>
+   <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+      <TR>
+         <TH class="h1" COLSPAN="5"><BR><H3>Sewing</H3>
+         </TH>
+      </TR>
+      <TR>
+         <TH class="h2">Sewing ID</TH>
+         <TH class="h2">Manager ID</TH>
+         <TH class="h2">Cost</TH>
+         <TH class="h2">Output Quantity</TH>
+         <TH class="h2">Order ID</TH>
+      </TR>
+      <TR ALIGN="CENTER">
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+      </TR>
+      <TR ALIGN="CENTER">
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+      </TR>
+      <TR ALIGN="CENTER">
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+      </TR>
+      <TR ALIGN="CENTER">
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+         <TD class="h3">Data 2</TD>
+         <TD class="h3">Data 1</TD>
+      </TR>
+   </TABLE>
     
     ></div>
 
 
 
     <div id="packaging" style="display:none;">
-        <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
-            <TR>
-               <TH class="h1" COLSPAN="2"><BR><H3>Packaging</H3>
-               </TH>
-            </TR>
-            <TR>
-               <TH class="h2">Column A</TH>
-               <TH class="h2">Column B</TH>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-            </TR>
-         </TABLE>
+      <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+         <TR>
+            <TH class="h1" COLSPAN="6"><BR><H3>Packaging</H3>
+            </TH>
+         </TR>
+         <TR>
+            <TH class="h2">Packing ID</TH>
+            <TH class="h2">Manager ID</TH>
+            <TH class="h2">Cost</TH>
+            <TH class="h2">Output Quantity</TH>
+            <TH class="h2">Order ID</TH>
+            <TH class="h2">Finish Date</TH>
+         </TR>
+         <TR ALIGN="CENTER">
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+         </TR>
+         <TR ALIGN="CENTER">
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+         </TR>
+         <TR ALIGN="CENTER">
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+         </TR>
+         <TR ALIGN="CENTER">
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+            <TD class="h3">Data 1</TD>
+            <TD class="h3">Data 2</TD>
+         </TR>
+      </TABLE>
         
         ></div>
 
 
 
         <div id="accounting" style="display:none;">
-            <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
-                <TR>
-                   <TH class="h1" COLSPAN="2"><BR><H3>Accounting</H3>
-                   </TH>
-                </TR>
-                <TR>
-                   <TH class="h2">Column A</TH>
-                   <TH class="h2">Column B</TH>
-                </TR>
-                <TR ALIGN="CENTER">
-                   <TD class="h3">Data 1</TD>
-                   <TD class="h3">Data 2</TD>
-                </TR>
-                <TR ALIGN="CENTER">
-                   <TD class="h3">Data 1</TD>
-                   <TD class="h3">Data 2</TD>
-                </TR>
-                <TR ALIGN="CENTER">
-                   <TD class="h3">Data 1</TD>
-                   <TD class="h3">Data 2</TD>
-                </TR>
-                <TR ALIGN="CENTER">
-                   <TD class="h3">Data 1</TD>
-                   <TD class="h3">Data 2</TD>
-                </TR>
-             </TABLE>
+         <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+            <TR>
+               <TH class="h1" COLSPAN="5"><BR><H3>Accounting</H3>
+               </TH>
+            </TR>
+            <TR>
+               <TH class="h2">cutting_id</TH>
+               <TH class="h2">mgr_id</TH>
+               <TH class="h2">cost</TH>
+               <TH class="h2">output_quantity</TH>
+               <TH class="h2">order_id</TH>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+            </TR>
+            <TR ALIGN="CENTER">
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+               <TD class="h3">Data 2</TD>
+               <TD class="h3">Data 1</TD>
+            </TR>
+         </TABLE>
             
             ></div>
 

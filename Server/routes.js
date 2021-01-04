@@ -6,16 +6,16 @@ const { getUser,validateUser } = require('./users');
 router.post('/AddUser', function(req,res){
     Data = req.body;
     if(Data.Password == Data.CPassword){
-        
-
+        database.addManager(Data,function(result){
+            if(result.affectedRows == 1){
+                res.redirect("/");
+            }
+        })
     }
-
-
 });
 router.post('/admin', function(req,res){
 if(validateUser(req.body)== true){
-    database.getAllManagers(function(response){
-        
+        database.getAllManagers(function(response){
         res.render('AdminPanel',{managers : response});
     });
     

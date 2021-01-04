@@ -129,7 +129,7 @@
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/AddUser" method="POST">
+    <form class="modal-content" action="/AddUser" method="POST" >
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -138,21 +138,21 @@
         <input type="text" placeholder="Enter Name" name="Name" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="Password" required>
+        <input type="password" placeholder="Enter Password" name="Password" id="pswd1" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="CPassword" required>
+        <input type="password" placeholder="Repeat Password" name="CPassword" id="pswd2" required>
         
         <label for="username"><b>Department</b></label><br>
         <select name="Department" placeholder="Enter Department" required>
-          <option value="1">Cutting</option>
-          <option value="2">Sewing</option>
-          <option value="3">Packaging</option>
+          <option value="2">Cutting</option>
+          <option value="3">Sewing</option>
+          <option value="4">Packaging</option>
           
         </select>
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="submit" class="signupbtn" onclick="matchPassword()">Sign Up</button>
       
         </div>
       </div>
@@ -169,6 +169,17 @@ if (event.target == modal) {
 modal.style.display = "none";
 }
 }
+function matchPassword() {
+  var pw1 = document.getElementById("pswd1");
+  var pw2 = document.getElementById("pswd2");
+  if(pw1.value != pw2.value)
+  {
+    alert("Passwords did not match");
+  } else {
+    alert(" Manager Added \n Login With The New Manager \n Creditails And Change His Password");
+  }
+}
+
 </script>
 
 

@@ -52,4 +52,26 @@ function getAllManagers(Callback){
     });
     
 }
-module.exports = {connectToDatabase,checkUser,getAllManagers};
+function addManager(Manager,Callback){
+   if(Manager.Department == 1){
+      Type = "admin";
+   }
+    else if(Manager.Department == 2){
+        Type = "CManager";
+    }
+    else if(Manager.Department == 3){
+        Type = "SManager";
+    }
+    else if(Manager.Department == 4){
+        Type = "PManager";
+    }
+      
+    connection.query("INSERT INTO `Factory`.`Managers` (`name`, `password`, `type`, `dep_ID`) VALUES ('"+ Manager.Name+"', '" + Manager.Password + "', '"+Type + "', '" + Manager.Department+ "');",
+    function(err, results, fields){
+        Callback(results);
+    
+    });
+      
+    
+}
+module.exports = {connectToDatabase,checkUser,getAllManagers,addManager};
