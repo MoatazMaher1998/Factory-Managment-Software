@@ -1,6 +1,7 @@
 const express = require("express");
 var opn = require('opn');
 const app = express();
+app.use(express.static(__dirname + '/views'));
 app.set("view engine","ejs");
 const Port = process.env.PORT || 2000;
 var routes = require('./Server/routes.js');
