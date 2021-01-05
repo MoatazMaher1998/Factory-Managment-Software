@@ -122,7 +122,9 @@ function DeleteAlert() {
 
 <body>
   
-  <form action="/user" method="POST" >
+  <form action="/main" method="POST" >
+    <input  name="ID" type="hidden" value= <%=user.ID%>>
+    <input  name="Password" type="hidden" value= <%=user.Password%>>
   <button class= "NormalButtons"  type="submit" >Back</button>
   </form>
 

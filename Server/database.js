@@ -2,6 +2,14 @@ const mysql = require('mysql');
 const mysql2 = require('mysql2');
 var user = require('./users');
 var connection;
+function deleteUser(ID,Callback){
+    connection.query("DELETE FROM Factory.Managers WHERE (`ID` = '"+ ID +"');", 
+    function(err,results,fields){
+        console.log(err);
+        Callback(results);
+     
+});
+}
 function connectToDatabase(){
     console.log("Connecting to Database ...");
     
@@ -52,6 +60,18 @@ function getAllManagers(Callback){
     });
     
 }
+function getTables(Callback){
+    connection.query("select * from Factory.Cutting Left Join Factory.Order ON Factory.Cutting.order_id = Factory.Order.order_id",function(err,Cuttings,fields){    
+    connection.query("select * from Factory.Sewing  Left Join Factory.Order ON Factory.Sewing.order_id = Factory.Order.order_id",function(err,Sewings,fields){
+    connection.query("select * from Factory.Packing  Left Join Factory.Order ON Factory.Packing.order_id = Factory.Order.order_id",function(err,Packings,fields){
+    connection.query("select * from Factory.Order",function(err,Orders,fields){
+        Callback(Cuttings,Sewings,Packings,Orders);
+    });
+    });
+    });
+    });
+    
+}
 function addManager(Manager,Callback){
    if(Manager.Department == 1){
       Type = "admin";
@@ -74,23 +94,5 @@ function addManager(Manager,Callback){
       
     
 }
-function deleteUser(ID,Callback){
-    if(ID==1){return  false;}
-    else
-    connection.query("DELETE FROM `Factory`.`Managers` WHERE (`ID` = '"+ ID +"');",function(err,results,fields){
-        Callback(results);
-    });
-}
-function getTables(Callback){
-    connection.query("select * from Factory.Cutting",function(err,Cuttings,fields){    
-    connection.query("select * from Factory.Sewing",function(err,Sewings,fields){
-    connection.query("select * from Factory.Packing",function(err,Packings,fields){
-    connection.query("select * from Factory.Order",function(err,Orders,fields){
-        Callback(Cuttings,Sewings,Packings,Orders);
-    });
-    });
-    });
-    });
-    
-}
+
 module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables};
