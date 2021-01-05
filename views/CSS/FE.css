@@ -186,3 +186,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
     .Allbutton:hover {
       opacity:1;
     }
+
+    .Allselect{
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+
+
+
+    }
