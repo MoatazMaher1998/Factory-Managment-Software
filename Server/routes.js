@@ -52,8 +52,34 @@ if(validateUser(req.body) == true){
     
         }
 else 
-res.send("you have no authentication ya 3ars");
+res.send("you have no authentication");
 });
+
+
+router.post('/patron', function(req,res){
+    if(validateUser(req.body) == true){
+            database.getAllManagers(function(response){
+            res.render('patron',{managers : response , msg:"" , user : req.body});
+        });
+        
+            }
+    else 
+    res.send("you have no authentication");
+    });
+
+
+    router.post('/cloth', function(req,res){
+        if(validateUser(req.body) == true){
+                database.getAllManagers(function(response){
+                res.render('cloth',{managers : response , msg:"" , user : req.body});
+            });
+            
+                }
+        else 
+        res.send("you have no authentication");
+        });
+
+
 router.post('/main', function (req, res) {
     console.log('\x1b[36m%s\x1b[0m','POST request on "/main" received on server');
     database.getTables(function(Cuttings,Sewings,Packings,Orders,Managers,Patrons,Cloth){

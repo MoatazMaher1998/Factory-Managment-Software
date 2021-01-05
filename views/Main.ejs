@@ -124,9 +124,17 @@ function myFunction1() {
                   <input  name="Password" type="hidden" value= <%=user.Password%>>
                   <button class="adminbutton" type="submit">Admin Panel</button>
                   </form>
-                  <form action="/user" method="POST" >
+                  <form action="/patron" method="POST" >
+                    <input  name="ID" type="hidden" value= <%=user.ID%>>
+                    <input  name="Password" type="hidden" value= <%=user.Password%>>
                   <button class="adminbutton" type="submit">View Patrons</button>
-                  </form>                  
+                  </form>    
+                  <form action="/cloth" method="POST" >
+                    <input  name="ID" type="hidden" value= <%=user.ID%>>
+                    <input  name="Password" type="hidden" value= <%=user.Password%>>
+                  <button class="adminbutton" type="submit">View Cloth</button>
+                  </form>               
+
                   <button onclick="myFunction1()" class="navitem">Cutting</button>
                   <button onclick="myFunction2()" class="navitem">Sewing</button>
                   <button onclick="myFunction3()" class="navitem">Packaging</button>
@@ -138,9 +146,17 @@ function myFunction1() {
                   <form action="/user" method="POST" >
                   <button class="adminbutton" type="submit">Change Password</button>  
                   </form>
-                  <form action="/user" method="POST" >
+                  <form action="/patron" method="POST" >
+                    <input  name="ID" type="hidden" value= <%=user.ID%>>
+                    <input  name="Password" type="hidden" value= <%=user.Password%>>
                   <button class="adminbutton" type="submit">View Patrons</button>
                   </form>
+                  <form action="/cloth" method="POST" >
+                    <input  name="ID" type="hidden" value= <%=user.ID%>>
+                    <input  name="Password" type="hidden" value= <%=user.Password%>>
+                  <button class="adminbutton" type="submit">View Cloth</button>
+                  </form>        
+                  
                   <button onclick="myFunction1()" class="navitem">Cutting</button>
                   <button onclick="myFunction2()" class="navitem">Sewing</button>
                   <button onclick="myFunction3()" class="navitem">Packaging</button>
