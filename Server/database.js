@@ -74,4 +74,9 @@ function addManager(Manager,Callback){
       
     
 }
-module.exports = {connectToDatabase,checkUser,getAllManagers,addManager};
+function deleteUser(ID,Callback){
+    connection.query("DELETE FROM `Factory`.`Managers` WHERE (`ID` = '"+ ID +"');",function(err,results,fields){
+        Callback(results);
+    });
+}
+module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser};

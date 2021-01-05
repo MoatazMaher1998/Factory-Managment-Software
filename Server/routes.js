@@ -3,12 +3,37 @@ var express = require('express');
 var router = express.Router();
 var database = require('./database');
 const { getUser,validateUser } = require('./users');
+
+router.post('/DeleteUser',function(req,res){
+Data = req.body;
+database.deleteUser(Data.ID,function(results){
+    if(results.affectedRows == 1){
+        database.getAllManagers(function(response){
+            res.render('AdminPanel',{managers : response , msg : "User Deleted !"});
+        });
+    }
+    else {
+        database.getAllManagers(function(response){
+            res.render('AdminPanel',{managers : response , msg : "User Doesn't Exist!"});
+        });
+    }
+});
+
+
+});
 router.post('/AddUser', function(req,res){
     Data = req.body;
     if(Data.Password == Data.CPassword){
         database.addManager(Data,function(result){
             if(result.affectedRows == 1){
-                res.redirect("/");
+                database.getAllManagers(function(response){
+                    res.render('AdminPanel',{managers : response , msg : "User Added"});
+                });
+            }
+            else {
+                database.getAllManagers(function(response){
+                    res.render('AdminPanel',{managers : response , msg : "There Was Error !"});
+                });
             }
         })
     }
@@ -16,10 +41,10 @@ router.post('/AddUser', function(req,res){
 router.post('/admin', function(req,res){
 if(validateUser(req.body)== true){
         database.getAllManagers(function(response){
-        res.render('AdminPanel',{managers : response});
+        res.render('AdminPanel',{managers : response , msg:""});
     });
     
-    }
+        }
 else 
 res.send("you have no authentication ya 3ars");
 });

@@ -151,7 +151,7 @@ function DeleteAlert() {
 <button class= "Allbuttons" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/AddUser" method="POST" >
+    <form class="modal-content" action="/AddUser" method="POST" onsubmit="return matchPassword()">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -174,7 +174,7 @@ function DeleteAlert() {
         </select>
         <div class="clearfix">
           <button class="Allbutton" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <button class="Allbutton" type="submit" class="signupbtn" onclick="matchPassword()">Sign Up</button>
+          <button class="Allbutton" type="submit" class="signupbtn">Sign Up</button>
       
         </div>
       </div>
@@ -196,9 +196,11 @@ function matchPassword() {
   var pw2 = document.getElementById("pswd2");
   if(pw1.value != pw2.value)
   {
-    alert("Passwords did not match");
+    alert("Passwords Did Not Match");
+    return false;
   } else {
-    alert(" Manager Added \n Login With The New Manager \n Creditails And Change His Password");
+    alert(" Manager Added \n Login With The New Manager Creditails \n And Change His Password");
+    return true;
   }
 }
 
@@ -227,11 +229,12 @@ function matchPassword() {
     
     <body>
        <div class="remove">
-      <form >
+      <form method="POST" action="/DeleteUser" onsubmit="DeleteAlert()">
         <label for="UserId">User ID:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <input class="b1" onclick="DeleteAlert()" type="submit" value="Delete User">
+        <input type="text" id="fname" name="ID" required><br>
+        <input class="b1"  type="submit" value="Delete User">
       </form> 
+      <%=msg%>
     </div>
     
     <table>
