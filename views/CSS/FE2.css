@@ -37,6 +37,8 @@
       border: none;
       cursor: pointer;
       opacity: 0.9;
+      margin: 15px;
+      display: inline-block;
     }
     
     .NormalButtons:hover {

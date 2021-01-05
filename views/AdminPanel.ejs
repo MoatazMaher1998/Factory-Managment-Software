@@ -119,8 +119,11 @@ function DeleteAlert() {
 
 <body>
   
-<button class= "NormalButtons" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-<button class= "NormalButtons"  class="signupbtn" style="width:auto;">Back</button>
+  <form action="/user" method="POST" >
+  <button class= "NormalButtons"  type="submit" >Back</button>
+  </form>
+
+<button class= "NormalButtons" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
 
 
 <div id="id01" class="modal">
