@@ -45,9 +45,9 @@ router.post('/AddUser', function(req,res){
     }
 });
 router.post('/admin', function(req,res){
-if(validateUser(req.body)== true){
+if(validateUser(req.body) == true){
         database.getAllManagers(function(response){
-        res.render('AdminPanel',{managers : response , msg:""});
+        res.render('AdminPanel',{managers : response , msg:"" , user : req.body});
     });
     
         }

@@ -175,15 +175,18 @@ function myFunction1() {
 <div id="cutting" style="display:none;">
    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
       <TR>
-         <TH class="h1" COLSPAN="5"><BR><H3>Cutting Deparment Orders</H3>
+         <TH class="h1" COLSPAN="8"><BR><H3>Cutting Department Orders</H3>
          </TH>
       </TR>
       <TR>
          <TH class="h2">Cutting ID</TH>
          <TH class="h2">Manager ID</TH>
-         <TH class="h2">Cost</TH>
+         <TH class="h2">Cutting Cost</TH>
          <TH class="h2">Output Quantity</TH>
          <TH class="h2">Order ID</TH>
+         <TH class="h2">Patron ID</TH>
+         <TH class="h2">Cloth ID</TH>
+         <TH class="h2">Total Cost</TH>
       </TR>
       <%for (var result in Cutting_Orders){%>
         <tr ALIGN="CENTER">
@@ -192,6 +195,9 @@ function myFunction1() {
         <td class="h2"><%=Cutting_Orders[result].cost%></td>
         <td class="h2"><%=Cutting_Orders[result].output_quantity%></td>
         <td class="h2"><%=Cutting_Orders[result].order_id%></td>  
+        <td class="h2"><%=Cutting_Orders[result].patron_id%></td>  
+        <td class="h2"><%=Cutting_Orders[result].cloth_id%></td>
+        <td class="h2"><%=Cutting_Orders[result].order_cost%></td>  
       </tr>
         <%}%>
    </TABLE>
@@ -202,24 +208,32 @@ function myFunction1() {
 <div id="sewing" style="display:none;">
    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
       <TR>
-         <TH class="h1" COLSPAN="5"><BR><H3>Sewing Deparment Orders</H3>
+         <TH class="h1" COLSPAN="9"><BR><H3>Sewing Department Orders</H3>
          </TH>
       </TR>
       <TR>
          <TH class="h2">Sewing ID</TH>
          <TH class="h2">Manager ID</TH>
-         <TH class="h2">Cost</TH>
+         <TH class="h2">Sewing Cost</TH>
          <TH class="h2">Output Quantity</TH>
          <TH class="h2">Order ID</TH>
+         <TH class="h2">Patron ID</TH>
+         <TH class="h2">Cloth ID</TH>
+         <TH class="h2">Cutting ID</TH>
+         <TH class="h2">Total Cost</TH>
       </TR>
    </TR>
    <%for (var result in Sewing_Orders){%>
      <tr ALIGN="CENTER">
      <td class="h2"><%=Sewing_Orders[result].sewing_id%></td>
      <td class="h2"><%=Sewing_Orders[result].mgr_id%></td>
+     <td class="h2"><%=Sewing_Orders[result].cost%></td>
      <td class="h2"><%=Sewing_Orders[result].output_quantity%></td>
-     <td class="h2"><%=Sewing_Orders[result].order_id%></td>
-     <td class="h2"><%=Sewing_Orders[result].cost%></td>  
+     <td class="h2"><%=Sewing_Orders[result].order_id%></td>   
+     <td class="h2"><%=Sewing_Orders[result].patron_id%></td>  
+     <td class="h2"><%=Sewing_Orders[result].cloth_id%></td>
+     <td class="h2"><%=Sewing_Orders[result].cutting_id%></td>
+     <td class="h2"><%=Sewing_Orders[result].order_cost%></td>  
    </tr>
      <%}%>
      
@@ -232,16 +246,20 @@ function myFunction1() {
     <div id="packaging" style="display:none;">
       <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
          <TR>
-            <TH class="h1" COLSPAN="6"><BR><H3>Packaging Deparment Orders</H3>
+            <TH class="h1" COLSPAN="10"><BR><H3>Packaging Department Orders</H3>
             </TH>
          </TR>
          <TR>
             <TH class="h2">Packing ID</TH>
             <TH class="h2">Manager ID</TH>
-            <TH class="h2">Cost</TH>
+            <TH class="h2">Packing Cost</TH>
             <TH class="h2">Output Quantity</TH>
             <TH class="h2">Order ID</TH>
-            <TH class="h2">Finish Date</TH>
+            <TH class="h2">Patron ID</TH>
+            <TH class="h2">Cloth ID</TH>
+            <TH class="h2">Cutting ID</TH>
+            <TH class="h2">Sewing ID</TH>
+             <TH class="h2">Total Cost</TH>
          </TR>
          <%for (var result in Packing_Orders){%>
             <tr ALIGN="CENTER">
@@ -250,7 +268,11 @@ function myFunction1() {
             <td class="h2"><%=Packing_Orders[result].cost%></td>
             <td class="h2"><%=Packing_Orders[result].output_quantity%></td>
             <td class="h2"><%=Packing_Orders[result].order_id%></td>  
-            <td class="h2"><%=Packing_Orders[result].finish_date%></td>
+            <td class="h2"><%=Packing_Orders[result].patron_id%></td>
+            <td class="h2"><%=Packing_Orders[result].cloth_id%></td>
+            <td class="h2"><%=Packing_Orders[result].cutting_id%></td>
+            <td class="h2"><%=Packing_Orders[result].sewing_id%></td>
+            <td class="h2"><%=Packing_Orders[result].order_cost%></td>
           </tr>
             <%}%>
          
@@ -263,24 +285,31 @@ function myFunction1() {
         <div id="accounting" style="display:none;">
          <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
             <TR>
-               <TH class="h1" COLSPAN="5"><BR><H3>Accounting</H3>
+               <TH class="h1" COLSPAN="9"><BR><H3>Accounting</H3>
                </TH>
             </TR>
             <TR>
-               <TH class="h2">cutting_id</TH>
-               <TH class="h2">mgr_id</TH>
-               <TH class="h2">cost</TH>
-               <TH class="h2">output_quantity</TH>
-               <TH class="h2">order_id</TH>
+               <TH class="h2">Order ID</TH>
+               <TH class="h2">Patron ID</TH>
+               <TH class="h2">Cloth ID</TH>
+               <TH class="h2">Start Date</TH>
+               <TH class="h2">Duration</TH>
+               <TH class="h2">Cutting ID</TH>
+               <TH class="h2">Sewing ID</TH>
+               <TH class="h2">Packing ID</TH>
+               <TH class="h2">Total Cost</TH>
             </TR>
-            <%for (var result in Packing_Orders){%>
+            <%for (var result in Orders_List){%>
                <tr ALIGN="CENTER">
-               <td class="h2"><%=Packing_Orders[result].packing_id%></td>
-               <td class="h2"><%=Packing_Orders[result].mgr_id%></td>
-               <td class="h2"><%=Packing_Orders[result].cost%></td>
-               <td class="h2"><%=Packing_Orders[result].output_quantity%></td>
-               <td class="h2"><%=Packing_Orders[result].order_id%></td>  
-               <td class="h2"><%=Packing_Orders[result].finish_date%></td>
+               <td class="h2"><%=Orders_List[result].order_id%></td>
+               <td class="h2"><%=Orders_List[result].patron_id%></td>
+               <td class="h2"><%=Orders_List[result].cloth_id%></td>
+               <td class="h2"><%=Orders_List[result].start_date%></td>
+               <td class="h2"><%=Orders_List[result].duration%></td>  
+               <td class="h2"><%=Orders_List[result].cutting_id%></td>
+               <td class="h2"><%=Orders_List[result].sewing_id%></td>
+               <td class="h2"><%=Orders_List[result].packing_id%></td>
+               <td class="h2"><%=Orders_List[result].order_cost%></td>
              </tr>
                <%}%>
          </TABLE>
