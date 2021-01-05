@@ -75,6 +75,8 @@ function addManager(Manager,Callback){
     
 }
 function deleteUser(ID,Callback){
+    if(ID==1){return  false;}
+    else
     connection.query("DELETE FROM `Factory`.`Managers` WHERE (`ID` = '"+ ID +"');",function(err,results,fields){
         Callback(results);
     });

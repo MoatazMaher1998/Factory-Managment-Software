@@ -6,8 +6,14 @@ const { getUser,validateUser } = require('./users');
 
 router.post('/DeleteUser',function(req,res){
 Data = req.body;
+if(Data.ID == 1){
+    database.getAllManagers(function(response){
+        res.render('AdminPanel',{managers : response , msg : "You cant delete yourself ya 5anzeer"});
+    });
+}
+else{
 database.deleteUser(Data.ID,function(results){
-    if(results.affectedRows == 1){
+      if(results.affectedRows == 1){
         database.getAllManagers(function(response){
             res.render('AdminPanel',{managers : response , msg : "User Deleted !"});
         });
@@ -19,7 +25,7 @@ database.deleteUser(Data.ID,function(results){
     }
 });
 
-
+}
 });
 router.post('/AddUser', function(req,res){
     Data = req.body;
