@@ -149,28 +149,109 @@ function myFunction1() {
 
 
               <div id="cutting1" style="display:none;">
-               <button  class="navitem">Add</button>
+               <button  onclick="document.getElementById('id01').style.display='block'" class="navitem">Add</button>
                <button  class="navitem">Edit</button>
                <button  class="navitem">Delete</button>
               </div>
 
               <div id="sewing1" style="display:none;">
-               <button  class="navitem">Add</button>
+               <button  onclick="document.getElementById('id02').style.display='block'" class="navitem">Add</button>
                <button  class="navitem">Edit</button>
                <button  class="navitem">Delete</button>
               </div>
 
               <div id="packaging1" style="display:none;">
-               <button  class="navitem">Add</button>
+               <button  onclick="document.getElementById('id03').style.display='block'" class="navitem">Add</button>
                <button  class="navitem">Edit</button>
                <button  class="navitem">Delete</button>
               </div>
             </div>
 
-            
+            <div id="id01" class="modal">
+               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+               <form class="modal-content" action="/AddUser" method="POST" onsubmit="return matchPassword()">
+                 <div class="container">
+                   <h1>Add New Cutting Order</h1>
+                   <p>Please fill in this form to create an Order.</p>
+                   <hr>
+                   <label for="managerid"><b>Manager ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Manager ID" name="managerid" required>
+           
+                   <label for="cost"><b>Cost</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Cost" name="cost"  required>
+             
+                   <label for="outputquantity"><b>Output Quantity</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Output Quantity" name="outputquantity"  required>
+                   
+                   <label for="orderid"><b>Order ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter order ID" name="orderid"  required>
+
+                   <div class="clearfix">
+                     <button class="Allbutton" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                     <button class="Allbutton" type="submit" class="signupbtn">Enter</button>
+                   </div>
+           
+                 </div>
+               </form>
+             </div>
+
+             <div id="id02" class="modal">
+               <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+               <form class="modal-content" action="/AddUser" method="POST" onsubmit="return matchPassword()">
+                 <div class="container">
+                   <h1>Add New Cutting Order</h1>
+                   <p>Please fill in this form to create an Order.</p>
+                   <hr>
+                   <label for="managerid"><b>Manager ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Manager ID" name="managerid" required>
+           
+                   <label for="cost"><b>Cost</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Cost" name="cost"  required>
+             
+                   <label for="outputquantity"><b>Output Quantity</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Output Quantity" name="outputquantity"  required>
+                   
+                   <label for="orderid"><b>Order ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter order ID" name="orderid"  required>
+
+                   <div class="clearfix">
+                     <button class="Allbutton" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                     <button class="Allbutton" type="submit" class="signupbtn">Enter</button>
+                   </div>
+                 </div>
+               </form>
+             </div>
 
 
+             <div id="id03" class="modal">
+               <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+               <form class="modal-content" action="/AddUser" method="POST" onsubmit="return matchPassword()">
+                 <div class="container">
+                   <h1>Add New Cutting Order</h1>
+                   <p>Please fill in this form to create an Order.</p>
+                   <hr>
+                   <label for="managerid"><b>Manager ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Manager ID" name="managerid" required>
+           
+                   <label for="cost"><b>Cost</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Cost" name="cost"  required>
+             
+                   <label for="outputquantity"><b>Output Quantity</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter Output Quantity" name="outputquantity"  required>
+                   
+                   <label for="orderid"><b>Order ID</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter order ID" name="orderid"  required>
 
+                   <label for="finishdate"><b>Finish Date</b></label>
+                   <input class= "Allinput" type="text" placeholder="Enter the finish date" name="finishdate"  required>
+
+                   <div class="clearfix">
+                     <button class="Allbutton" type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                     <button class="Allbutton" type="submit" class="signupbtn">Enter</button>
+                   </div>
+                 </div>
+               </form>
+             </div>
 
 <div id="cutting" style="display:none;">
    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
