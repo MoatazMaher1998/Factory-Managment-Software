@@ -1,5 +1,5 @@
 body{
-    background-image: url(img1.jpg);
+    background-image: url(Background.jpg);
     background-size: cover;     
 }
 .table{
@@ -14,6 +14,7 @@ body{
 	width: 100%;
 }
 .table{
+	background-image: url(Dark.jpg);
 	border-width: 0px;
 	border-style: solid;
 	border-color: black;
