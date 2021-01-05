@@ -116,7 +116,6 @@ function myFunction1() {
 </head>
 
 
-
     <body>
             <div class="relative">
                <% if (user.Type=='admin') { %>
@@ -125,8 +124,9 @@ function myFunction1() {
                   <input  name="Password" type="hidden" value= <%=user.Password%>>
                   <button class="adminbutton" type="submit">Admin Panel</button>
                   </form>
-
-                  <button class="adminbutton">View Patrons</button>
+                  <form action="/user" method="POST" >
+                  <button class="adminbutton" type="submit">View Patrons</button>
+                  </form>                  
                   <button onclick="myFunction1()" class="navitem">Cutting</button>
                   <button onclick="myFunction2()" class="navitem">Sewing</button>
                   <button onclick="myFunction3()" class="navitem">Packaging</button>
@@ -136,10 +136,11 @@ function myFunction1() {
                 
               <% if(user.Type!='admin') { %>
                   <form action="/user" method="POST" >
-                      <button class="adminbutton" type="submit">Change Password</button>  
+                  <button class="adminbutton" type="submit">Change Password</button>  
                   </form>
-                  
-                  <button class="adminbutton">View Patrons</button>
+                  <form action="/user" method="POST" >
+                  <button class="adminbutton" type="submit">View Patrons</button>
+                  </form>
                   <button onclick="myFunction1()" class="navitem">Cutting</button>
                   <button onclick="myFunction2()" class="navitem">Sewing</button>
                   <button onclick="myFunction3()" class="navitem">Packaging</button>

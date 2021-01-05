@@ -32,36 +32,6 @@
       outline: none;
     }
     
-    /* Set a style for all buttons */
-    .Allbutton {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-    
-    .Allbutton:hover {
-      opacity:1;
-    }
-
-    .Allbuttons {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      float: right;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-    
-    .Allbuttons:hover {
-      opacity:1;
-    }
     
     /* Extra styles for the cancel button */
     .cancelbtn {
@@ -149,7 +119,10 @@ function DeleteAlert() {
 
 <body>
   
-<button class= "Allbuttons" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+<button class= "NormalButtons" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+<button class= "NormalButtons"  class="signupbtn" style="width:auto;">Back</button>
+
+
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     <form class="modal-content" action="/AddUser" method="POST" onsubmit="return matchPassword()">
@@ -176,8 +149,8 @@ function DeleteAlert() {
         <div class="clearfix">
           <button class="Allbutton" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
           <button class="Allbutton" type="submit" class="signupbtn">Sign Up</button>
-      
         </div>
+
       </div>
     </form>
   </div>
@@ -233,7 +206,7 @@ function matchPassword() {
       <form method="POST" action="/DeleteUser" onsubmit="DeleteAlert()">
         <label for="UserId">User ID:</label><br>
         <input type="text" id="fname" name="ID" required><br>
-        <input class="b1"  type="submit" value="Delete User">
+        <input class="DeleteUser"  type="submit" value="Delete User">
       </form> 
       <h2><%=msg%></h2>
     </div>
