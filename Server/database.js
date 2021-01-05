@@ -82,8 +82,24 @@ function deleteUser(ID,Callback){
     });
 }
 function getTables(Callback){
-    connection.query("select * from Factory.Cutting",function(err,results,fields){
-        Callback(results);
+    Passer = {
+        Cutting : [],
+        Sewing : [],
+        Packing : [],
+        Order : []
+    };
+    connection.query("select * from Factory.Cutting",function(err,Cuttings,fields){
+        Passer.Cutting = Cuttings;
     });
+    connection.query("select * from Factory.Sewing",function(err,Sewings,fields){
+        Passer.Sewing = Sewings;
+    });
+    connection.query("select * from Factory.Packing",function(err,Packings,fields){
+        Passer.Packing = Packings;
+    });
+    connection.query("select * from Factory.Order",function(err,Orders,fields){
+        Passer.Order = Orders;
+    });
+    Callback(Passer.Cutting,Passer.Sewing,Passer.Packing,Passer.Order);
 }
 module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables};
