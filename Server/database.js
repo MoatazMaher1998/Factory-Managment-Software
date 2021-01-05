@@ -81,4 +81,9 @@ function deleteUser(ID,Callback){
         Callback(results);
     });
 }
-module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser};
+function getTables(Callback){
+    connection.query("select * from Factory.Cutting",function(err,results,fields){
+        Callback(results);
+    });
+}
+module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables};

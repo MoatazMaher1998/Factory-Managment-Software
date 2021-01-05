@@ -101,48 +101,28 @@ function myFunction1() {
 
 
 <div id="cutting" style="display:none;">
-<TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
-    <TR>
-       <TH class="h1" COLSPAN="5"><BR><H3>Cutting</H3>
-       </TH>
-    </TR>
-    <TR>
-       <TH class="h2">Cutting ID</TH>
-       <TH class="h2">Manager ID</TH>
-       <TH class="h2">Cost</TH>
-       <TH class="h2">Output Quantity</TH>
-       <TH class="h2">Order ID</TH>
-    </TR>
-    <TR ALIGN="CENTER">
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-    </TR>
-    <TR ALIGN="CENTER">
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-    </TR>
-    <TR ALIGN="CENTER">
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-    </TR>
-    <TR ALIGN="CENTER">
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-       <TD class="h3">Data 2</TD>
-       <TD class="h3">Data 1</TD>
-    </TR>
- </TABLE>
-
+   <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
+      <TR>
+         <TH class="h1" COLSPAN="5"><BR><H3>Cutting Deparment Orders</H3>
+         </TH>
+      </TR>
+      <TR>
+         <TH class="h2">Cutting ID</TH>
+         <TH class="h2">Manager ID</TH>
+         <TH class="h2">Cost</TH>
+         <TH class="h2">Output Quantity</TH>
+         <TH class="h2">Order ID</TH>
+      </TR>
+      <%for (var result in Cutting_Orders){%>
+        <tr>
+        <td><%=Cutting_Orders[result].cutting_id%></td>
+        <td><%=Cutting_Orders[result].mgr_id%></td>
+        <td><%=Cutting_Orders[result].cost%></td>
+        <td><%=Cutting_Orders[result].output_quantity%></td>
+        <td><%=Cutting_Orders[result].order_id%></td>  
+      </tr>
+        <%}%>
+   </TABLE>
 ></div>
 
 
