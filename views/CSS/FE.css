@@ -40,10 +40,41 @@ body{
 }
 
 .adminbutton{
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      border: none;
-      cursor: pointer;
-      opacity: 0.9;
+	  display: inline-block;
+	  width: 100px;
+	  height: 40px;
+	  text-align: center;
+	  border: gray;
+	  background-color: #4CAF50;
+	  color: #fff;
+	  cursor: pointer;
+	  font-weight: bold;
+	  margin: 15px;
+	  opacity: 0.9;
+}
+
+.navitem {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	border: gray;
+	background-color: #E8562A;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 15px;
+}
+
+table, th, td {
+	border: 1px solid black;
+ }
+
+.relative {
+	background-color: #fff;
+	margin: auto;
+	width: 80%;
+	 /* border: 3px solid green; */ 
+	padding: 10px;
+	position: relative;
 }
