@@ -3,12 +3,9 @@ body{
     background-size: cover;     
 }
 .table{
-    position: relative;
-    
+    position: relative;  
     height: 200px;
     width: 100%;
-
-
 }
 .row1{
 	width: 100%;

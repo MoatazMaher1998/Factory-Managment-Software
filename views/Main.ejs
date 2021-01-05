@@ -184,12 +184,12 @@ function myFunction1() {
          <TH class="h2">Order ID</TH>
       </TR>
       <%for (var result in Cutting_Orders){%>
-        <tr>
-        <td><%=Cutting_Orders[result].cutting_id%></td>
-        <td><%=Cutting_Orders[result].mgr_id%></td>
-        <td><%=Cutting_Orders[result].cost%></td>
-        <td><%=Cutting_Orders[result].output_quantity%></td>
-        <td><%=Cutting_Orders[result].order_id%></td>  
+        <tr ALIGN="CENTER">
+        <td class="h2"><%=Cutting_Orders[result].cutting_id%></td>
+        <td class="h2"><%=Cutting_Orders[result].mgr_id%></td>
+        <td class="h2"><%=Cutting_Orders[result].cost%></td>
+        <td class="h2"><%=Cutting_Orders[result].output_quantity%></td>
+        <td class="h2"><%=Cutting_Orders[result].order_id%></td>  
       </tr>
         <%}%>
    </TABLE>
