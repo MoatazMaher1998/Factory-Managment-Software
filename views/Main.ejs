@@ -6,6 +6,10 @@
     <link href="/CSS/FE.css" type="text/css" rel="stylesheet">
 
 
+<style>
+     form { display: inline; }
+</style>
+
 
 <script>
 function myFunction1() {
@@ -72,27 +76,50 @@ function myFunction1() {
 
     <body>
             <div class="relative">
-               
+
                <% if (user.Type=='admin') { %>
                   <form action="/admin" method="POST" >
                   <input  name="ID" type="hidden" value= <%=user.ID%>>
                   <input  name="Password" type="hidden" value= <%=user.Password%>>
                   <button class="adminbutton" type="submit">Admin Panel</button>
-                  
                   </form>
+
+                  <button onclick="myFunction1()" class="navitem">Cutting</button>
+                  <button onclick="myFunction2()" class="navitem">Sewing</button>
+                  <button onclick="myFunction3()" class="navitem">Packaging</button>
+                  <button onclick="myFunction4()" class="navitem">Accounting</button>
                 <% } %>
+
+                
               <% if(user.Type!='admin') { %>
                   <form action="/user" method="POST" >
-                      <button class="adminbutton" type="submit">Change Password</button>
-                      </form>
+                      <button class="adminbutton" type="submit">Change Password</button>  
+                  </form>
+
+                  <button onclick="myFunction1()" class="navitem">Cutting</button>
+                  <button onclick="myFunction2()" class="navitem">Sewing</button>
+                  <button onclick="myFunction3()" class="navitem">Packaging</button>
+                  <button onclick="myFunction4()" class="navitem">Accounting</button>
               <% } %>
 
 
-                    <button onclick="myFunction1()" class="navitem">Cutting</button>
-                    <button onclick="myFunction2()" class="navitem">Sewing</button>
-                    <button onclick="myFunction3()" class="navitem">Packaging</button>
-                    <button onclick="myFunction4()" class="navitem">Accounting</button>
+              <div id="cutting" style="display:none;">
+               <button  class="navitem">Add</button>
+               <button  class="navitem">Edit</button>
+               <button  class="navitem">Delete</button>
+              </div>
 
+              <div id="sewing" style="display:none;">
+               <button  class="navitem">Add</button>
+               <button  class="navitem">Edit</button>
+               <button  class="navitem">Delete</button>
+              </div>
+
+              <div id="packaging" style="display:none;">
+               <button  class="navitem">Add</button>
+               <button  class="navitem">Edit</button>
+               <button  class="navitem">Delete</button>
+              </div>
             </div>
 
             

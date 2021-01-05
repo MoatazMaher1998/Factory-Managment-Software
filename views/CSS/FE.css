@@ -41,8 +41,8 @@ body{
 
 .adminbutton{
 	  display: inline-block;
-	  width: 100px;
-	  height: 40px;
+	  width: 140px;
+	  height: 50px;
 	  text-align: center;
 	  border: gray;
 	  background-color: #4CAF50;
@@ -55,8 +55,8 @@ body{
 
 .navitem {
 	display: inline-block;
-	width: 100px;
-	height: 40px;
+	width: 120px;
+	height: 50px;
 	text-align: center;
 	border: gray;
 	background-color: #E8562A;
@@ -71,9 +71,8 @@ table, th, td {
  }
 
 .relative {
-	background-color: #fff;
 	margin: auto;
-	width: 80%;
+	width: 55%;
 	 /* border: 3px solid green; */ 
 	padding: 10px;
 	position: relative;
