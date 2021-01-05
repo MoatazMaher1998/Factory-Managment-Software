@@ -202,7 +202,7 @@ function myFunction1() {
 <div id="sewing" style="display:none;">
    <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
       <TR>
-         <TH class="h1" COLSPAN="5"><BR><H3>Sewing</H3>
+         <TH class="h1" COLSPAN="5"><BR><H3>Sewing Deparment Orders</H3>
          </TH>
       </TR>
       <TR>
@@ -232,7 +232,7 @@ function myFunction1() {
     <div id="packaging" style="display:none;">
       <TABLE class ="table" BORDER="5"    WIDTH="100%"   CELLPADDING="20" CELLSPACING="0">
          <TR>
-            <TH class="h1" COLSPAN="6"><BR><H3>Packaging</H3>
+            <TH class="h1" COLSPAN="6"><BR><H3>Packaging Deparment Orders</H3>
             </TH>
          </TR>
          <TR>
@@ -273,34 +273,16 @@ function myFunction1() {
                <TH class="h2">output_quantity</TH>
                <TH class="h2">order_id</TH>
             </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-            </TR>
-            <TR ALIGN="CENTER">
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-               <TD class="h3">Data 2</TD>
-               <TD class="h3">Data 1</TD>
-            </TR>
+            <%for (var result in Packing_Orders){%>
+               <tr ALIGN="CENTER">
+               <td class="h2"><%=Packing_Orders[result].packing_id%></td>
+               <td class="h2"><%=Packing_Orders[result].mgr_id%></td>
+               <td class="h2"><%=Packing_Orders[result].cost%></td>
+               <td class="h2"><%=Packing_Orders[result].output_quantity%></td>
+               <td class="h2"><%=Packing_Orders[result].order_id%></td>  
+               <td class="h2"><%=Packing_Orders[result].finish_date%></td>
+             </tr>
+               <%}%>
          </TABLE>
             
             ></div>
