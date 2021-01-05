@@ -8,19 +8,19 @@ router.post('/DeleteUser',function(req,res){
 Data = req.body;
 if(Data.ID == 1){
     database.getAllManagers(function(response){
-        res.render('AdminPanel',{managers : response , msg : "You cant delete yourself ya 5anzeer"});
+        res.render('AdminPanel',{managers : response , msg : "You cant delete yourself ya 5anzeer" , user : getUser()});
     });
 }
 else{
 database.deleteUser(Data.ID,function(results){
       if(results.affectedRows == 1){
         database.getAllManagers(function(response){
-            res.render('AdminPanel',{managers : response , msg : "User Deleted !"});
+            res.render('AdminPanel',{managers : response , msg : "User Deleted !" , user : getUser()});
         });
     }
     else {
         database.getAllManagers(function(response){
-            res.render('AdminPanel',{managers : response , msg : "User Doesn't Exist!"});
+            res.render('AdminPanel',{managers : response , msg : "User Doesn't Exist!" , user : getUser()});
         });
     }
 });
@@ -86,6 +86,7 @@ router.post('/main', function (req, res) {
        
     database.checkUser(req.body,function(response){
         if( response == "Pass"){
+    
             res.render('Main' , {user :getUser() , Cloth_List : Cloth , Patrons_List : Patrons,Managers_List: Managers,Cutting_Orders : Cuttings , Sewing_Orders : Sewings ,Packing_Orders : Packings , Orders_List : Orders});}
             else {
                 res.render('Welcome' , {condition :response});}
