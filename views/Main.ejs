@@ -174,8 +174,14 @@ function myFunction1() {
                    <h1>Add New Cutting Order</h1>
                    <p>Please fill in this form to create an Order.</p>
                    <hr>
-                   <label for="managerid"><b>Manager ID</b></label>
-                   <input class= "Allinput" type="text" placeholder="Enter Manager ID" name="managerid" required>
+                   <label for="managerid"><b>Manager ID</b></label> <br>
+                   <select class= "Allinput" name="Department" placeholder="Enter Department" name="managerid" required>
+                    <option value="1">Enter Manager ID</option>
+                    <%for (var result in Managers_List){%>
+                      <option><%=Managers_List[result].ID%></option>
+                      <%}%>  
+                  </select><br>
+    
            
                    <label for="cost"><b>Cost</b></label>
                    <input class= "Allinput" type="text" placeholder="Enter Cost" name="cost"  required>

@@ -65,11 +65,17 @@ function getTables(Callback){
     connection.query("select * from Factory.Sewing  Left Join Factory.Order ON Factory.Sewing.order_id = Factory.Order.order_id",function(err,Sewings,fields){
     connection.query("select * from Factory.Packing  Left Join Factory.Order ON Factory.Packing.order_id = Factory.Order.order_id",function(err,Packings,fields){
     connection.query("select * from Factory.Order",function(err,Orders,fields){
-        Callback(Cuttings,Sewings,Packings,Orders);
-    });
-    });
-    });
-    });
+    connection.query("select * from Factory.Managers",function(err,Managers,fields){
+    connection.query("select * from Factory.Patron",function(err,Patrons,fields){
+    connection.query("select * from Factory.Cloth",function(err,Cloth,fields){
+                Callback(Cuttings,Sewings,Packings,Orders,Managers,Patrons,Cloth);
+            });
+            });
+            });
+            });
+            });
+            });
+            });
     
 }
 function addManager(Manager,Callback){
