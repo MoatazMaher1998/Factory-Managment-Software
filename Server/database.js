@@ -101,7 +101,7 @@ function addManager(Manager,Callback){
 }
 function addOrder(Data,Callback){
     console.log(Data);
-    connection.query("INSERT INTO Factory.Order (order_id, patron_id, cloth_id, start_date, order_cost) VALUES ("+Data.orderid+"," +Data.Patron_ID +"," + Data.Cloth_ID +",'"+ "2021-01-06" +"',"+ Data.Cutting_Cost + ");",
+    connection.query("INSERT INTO Factory.Order (order_id, patron_id, cloth_id, start_date, order_cost) VALUES ("+Data.orderid+"," +Data.Patron_ID +"," + Data.Cloth_ID +",'"+ "2021-01-06" +"',"+ (Data.Cutting_Cost * Data.outputquantity) + ");",
     function(err1, result1, fields){
     connection.query("INSERT INTO Factory.Cutting ( mgr_id, cost, output_quantity, order_id) VALUES ('"+Data.managerid +"', '"+ Data.Cutting_Cost+"', '"+ Data.outputquantity +"', '"+ Data.orderid +"')",
         function(err2, result2, fields){
@@ -109,4 +109,11 @@ function addOrder(Data,Callback){
         });
     });
 }
-module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables,addOrder};
+function proceedCutting(Data,Callback){
+    connection.query("",
+    function(err, results, fields){
+        Callback(results);
+    
+    });
+}
+module.exports = {proceedCutting,connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables,addOrder};

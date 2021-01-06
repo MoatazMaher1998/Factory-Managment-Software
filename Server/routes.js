@@ -88,6 +88,11 @@ router.post('/main', function (req, res) {
             console.log(result);
         });
     }
+    if(Data.flag == "NextCutting"){
+        database.proceedCutting(Data,function(result){
+
+        });
+    }
     database.getTables(function(Cuttings,Sewings,Packings,Orders,Managers,Patrons,Cloth){
     database.checkUser(req.body,function(response){
         if( response == "Pass"){

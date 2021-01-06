@@ -347,7 +347,10 @@ function myFunction1() {
                   <p>Please fill in this form to move an order to the next step.</p>
                   <hr>
                   <label for="cuttingid"><b>Cutting ID</b></label>
-                  <input class= "Allinput" type="text" placeholder="Enter Cutting ID" name="cuttingid" required>
+                  <input type="hidden" name="flag" value="NextCutting">
+                  <input  name="ID" type="hidden" value= <%=user.ID%>>
+                   <input  name="Password" type="hidden" value= <%=user.Password%>>
+                  <input class= "Allinput" type="text"  name="cuttingid" required>
 
                   <div class="clearfix">
                     <button class="Allbutton" type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
