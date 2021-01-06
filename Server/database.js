@@ -63,7 +63,7 @@ function getAllManagers(Callback){
 function getTables(Callback){
     connection.query("select * from Factory.Cutting Left Join Factory.Order ON Factory.Cutting.order_id = Factory.Order.order_id",function(err,Cuttings,fields){    
     connection.query("select * from Factory.Sewing  Left Join Factory.Order ON Factory.Sewing.order_id = Factory.Order.order_id",function(err,Sewings,fields){
-    connection.query("select * from Factory.Packing  Left Join Factory.Order ON Factory.Packing.order_id = Factory.Order.order_id",function(err,Packings,fields){
+    connection.query("select * from Factory.Packing Left Join Factory.Order ON Factory.Packing.order_id = Factory.Order.order_id",function(err,Packings,fields){
     connection.query("select * from Factory.Order",function(err,Orders,fields){
     connection.query("select * from Factory.Managers",function(err,Managers,fields){
     connection.query("select * from Factory.Patron",function(err,Patrons,fields){
@@ -100,9 +100,10 @@ function addManager(Manager,Callback){
     
 }
 function addOrder(Data,Callback){
-    connection.query("INSERT INTO Factory.Order ( patron_id, cloth_id, start_date, order_cost) VALUES (" +Data.PatronID +", " + Data.ClothID +", '"+ Date.now +"', "+ Data.cost + ");",
+    console.log(Data);
+    connection.query("INSERT INTO Factory.Order (order_id, patron_id, cloth_id, start_date, order_cost) VALUES ("+Data.orderid+"," +Data.Patron_ID +"," + Data.Cloth_ID +",'"+ "2021-01-06" +"',"+ Data.Cutting_Cost + ");",
     function(err1, result1, fields){
-        connection.query("INSERT INTO Factory.Cutting ( mgr_id, cost, output_quantity, order_id) VALUES ('"+Data.managerid +"', '"+ Data.cost+"', '"+ Data.outputquantity +"', '"+ Data.orderid +"'",
+    connection.query("INSERT INTO Factory.Cutting ( mgr_id, cost, output_quantity, order_id) VALUES ('"+Data.managerid +"', '"+ Data.Cutting_Cost+"', '"+ Data.outputquantity +"', '"+ Data.orderid +"')",
         function(err2, result2, fields){
         Callback(err1);
         });
