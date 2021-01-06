@@ -185,13 +185,16 @@ function myFunction1() {
 
             <div id="id01" class="modal">
                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-               <form class="modal-content" action="/AddUser" method="POST" >
+               <form class="modal-content" action="/main" method="POST" >
                  <div class="container">
                    <h1>Add New Cutting Order</h1>
+                   <input type="hidden" name="flag" value="addCuttingOrder">
+                   <input  name="ID" type="hidden" value= <%=user.ID%>>
+                   <input  name="Password" type="hidden" value= <%=user.Password%>>
                    <p>Please fill in this form to create an Order.</p>
                    <hr>
                    <label for="managerid"><b>Manager ID</b></label> <br>
-                   <select class= "Allinput" name="Department" placeholder="Enter Department" name="managerid" required>
+                   <select class= "Allinput" name="managerid" placeholder="Enter Department"  required>
                     <option value="1">Enter Manager ID</option>
                     <%for (var result in Managers_List){%>
                       <option><%=Managers_List[result].ID%></option>
@@ -210,7 +213,7 @@ function myFunction1() {
                                       
                    <label for="patronid"><b>Patron ID</b></label>
                    <br>
-                   <select class= "Allinput" name="Department" placeholder="Enter Department" name="managerid" required>
+                   <select class= "Allinput" placeholder="Enter Patron ID" name="PatronID" required>
                     <option value="1">Enter Patron ID</option>
                     <%for (var result in Patrons_List){%>
                       <option><%=Patrons_List[result].patron_ID%></option>
@@ -219,7 +222,7 @@ function myFunction1() {
                                       
                    <label for="clothid"><b>Cloth ID</b></label>
                    <br>
-                   <select class= "Allinput" name="Department" placeholder="Enter Department" name="managerid" required>
+                   <select class= "Allinput"  placeholder="Enter Cloth ID" name="ClothID" required>
                     <option value="1">Enter Cloth ID</option>
                     <%for (var result in Cloth_List){%>
                       <option><%=Cloth_List[result].cloth_ID%></option>

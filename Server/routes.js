@@ -82,8 +82,13 @@ router.post('/patron', function(req,res){
 
 router.post('/main', function (req, res) {
     console.log('\x1b[36m%s\x1b[0m','POST request on "/main" received on server');
+    Data = req.body;
+    if(Data.flag=="addCuttingOrder"){
+        database.addOrder(Data,function(result){
+            console.log(result);
+        });
+    }
     database.getTables(function(Cuttings,Sewings,Packings,Orders,Managers,Patrons,Cloth){
-       
     database.checkUser(req.body,function(response){
         if( response == "Pass"){
     

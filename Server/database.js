@@ -99,5 +99,13 @@ function addManager(Manager,Callback){
       
     
 }
-
-module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables};
+function addOrder(Data,Callback){
+    connection.query("INSERT INTO Factory.Order ( patron_id, cloth_id, start_date, order_cost) VALUES (" +Data.PatronID +", " + Data.ClothID +", '"+ Date.now +"', "+ Data.cost + ");",
+    function(err1, result1, fields){
+        connection.query("INSERT INTO Factory.Cutting ( mgr_id, cost, output_quantity, order_id) VALUES ('"+Data.ID +"', '"+ Data.cost+"', '"+ Data.outputquantity +"', '"+ Data.orderid +"'",
+        function(err2, result2, fields){
+        Callback(err1);
+        });
+    });
+}
+module.exports = {connectToDatabase,checkUser,getAllManagers,addManager,deleteUser,getTables,addOrder};
